@@ -27,3 +27,7 @@ body{
 #fsubmit{
     margin-left: 90%;
 }
+
+.winner{
+    font-weight: bold;
+}
