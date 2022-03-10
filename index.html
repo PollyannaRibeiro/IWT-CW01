@@ -17,52 +17,41 @@
     </header>
 
     <main>
-        <div class="dropdown">
-            <button class="dropbutton">Tournaments</button>
-            <div class="dropdown-content">
-                <a class="" id = "men" href="#adding">Wimbledon men</a>
-                <a class="" href="#">Wimbledon women</a>
-            </div>
-        </div>
-        
-        <form class="container">
-            <div class= "form-row row justify-content-md-center players-form" id="player1">
-                <label>Round</label>
-                <input type="text" class= "" id="fround" name="fround"/>
-                <label>Player</label>
-                <input type="text" class= "" id="fplayer" name="fplayer"/>
-                <label>Set 1</label>
-                <input type="number"  class="fset" id="fset1" name="fset1"/>
-                <label>Set 2</label>
-                <input type="number" class="fset" id="fset2" name="fset2"/>
-                <label>Set 3</label>
-                <input type="number" class="fset" id="fset3" name="fset3"/>
-                <label>Set 4</label>
-                <input type="number" class="fset" id="fset4" name="fset4"/>
-                <label>Set 5</label>
-                <input type="number" class="fset" id="fset5" name="fset5"/>
-            </div>
-            
-            <div class= "form-row row justify-content-md-center players-form" id="player2">
-                <label>Round</label>
-                <input type="text" class= "" id="fround" name="fround"/>
-                <label>Player</label>
-                <input type="text" class= "" id="fplayer" name="fplayer"/>
-                <label>Set 1</label>
-                <input type="number"  class="fset" id="fset1" name="fset1"/>
-                <label>Set 2</label>
-                <input type="number" class="fset" id="fset2" name="fset2"/>
-                <label>Set 3</label>
-                <input type="number" class="fset" id="fset3" name="fset3"/>
-                <label>Set 4</label>
-                <input type="number" class="fset" id="fset4" name="fset4"/>
-                <label>Set 5</label>
-                <input type="number" class="fset" id="fset5" name="fset5"/>
-            </div>
-            <input class="btn btn-dark " id="fsubmit" type="submit" value="Submit">
+        <div class="container">
+            <form class=" justify-content-md-center players-form">
+                <div class="row">
+                <label>Tournaments</label>
+                    <input type="checkbox" id="women" name="checkbox" value="women" onclick="onlyOneSelected(this)">
+                    <label>Women</label>
+                    <input type="checkbox" id="men" name="checkbox" value="men" onclick="onlyOneSelected(this)">
+                    <label>Men</label>
+                </div>
 
-        </form>
-        <table class="table container" >
+                <label>Round</label>
+                <input type="number" min="1" max="7" class="fset" id="fset1" name="fset1"/>
+                <select>
+                    <option value="equals">equals</option>
+                    <option value="greater than">greater than</option>
+                    <option value="less than">less than</option>
+                </select>
+                <label>Player</label>
+                <input type="text" class= "" id="fplayer" name="fplayer"/>
+                <select>
+                    <option value="equals">equals</option>
+                    <option value="contains">contains</option>
+                    <option value="none">none</option>
+                </select>
+                <label>Set</label>
+                <input type="number" min="1" max="5"  class="fset" id="fset1" name="fset1"/>
+                <select>
+                    <option value="equals">equals</option>
+                    <option value="greater than">greater than</option>
+                    <option value="less than">less than</option>
+                </select>
+                <input class="btn btn-dark " id="fsubmit" type="submit" value="Submit">
+            </form>
+        </div>
+        <table class="table container" id="men-table">
             <thead>
                 <tr>
                     <th>Round</th>
@@ -78,8 +67,19 @@
             </tbody>
         </table>
 
-        <div id="adding"></div>
-
+        <table class="table container" id="women-table">
+            <thead>
+                <tr>
+                    <th>Round</th>
+                    <th>Player</th>
+                    <th>Set 1</th>
+                    <th>Set 2</th>
+                    <th>Set 3</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </main>
 
     <footer>
