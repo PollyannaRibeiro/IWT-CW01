@@ -1,0 +1,29 @@
+body{
+    left: auto;
+    right: auto;
+}
+
+.players-form {
+    margin: 10px;
+}
+.players-form label {
+    margin: 5px;
+}
+.players-form input{
+    margin: 2px;
+}
+#fround{
+    width: 70px;
+
+}
+#fplayer{
+    width: auto;
+
+}
+.fset{
+    width: 50px;
+}
+
+#fsubmit{
+    margin-left: 90%;
+}

@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -12,35 +17,68 @@
     </header>
 
     <main>
-        <form>
-            <label>Round</label>
-            <input type="text" id="fround" name="fround"/><br>
-            <label>Player</label>
-            <input type="text" id="fplayer" name="fplayer"/><br>
-            <label>Set 1</label>
-            <input type="number" id="fset1" name="fset1"/><br>
-            <label>Set 2</label>
-            <input type="number" id="fset2" name="fset2"/><br>
-            <label>Set 3</label>
-            <input type="number" id="fset3" name="fset3"/><br>
-            <label>Set 4</label>
-            <input type="number" id="fset4" name="fset4"/><br>
-            <label>Set 5</label>
-            <input type="number" id="fset5" name="fset5"/><br>
-            <input type="submit" value= "submit" aria-label="submit" id="fround" name="fround"/><br>
+        <div class="dropdown">
+            <button class="dropbutton">Tournaments</button>
+            <div class="dropdown-content">
+                <a class="" id = "men" href="#adding">Wimbledon men</a>
+                <a class="" href="#">Wimbledon women</a>
+            </div>
+        </div>
+        
+        <form class="container">
+            <div class= "form-row row justify-content-md-center players-form" id="player1">
+                <label>Round</label>
+                <input type="text" class= "" id="fround" name="fround"/>
+                <label>Player</label>
+                <input type="text" class= "" id="fplayer" name="fplayer"/>
+                <label>Set 1</label>
+                <input type="number"  class="fset" id="fset1" name="fset1"/>
+                <label>Set 2</label>
+                <input type="number" class="fset" id="fset2" name="fset2"/>
+                <label>Set 3</label>
+                <input type="number" class="fset" id="fset3" name="fset3"/>
+                <label>Set 4</label>
+                <input type="number" class="fset" id="fset4" name="fset4"/>
+                <label>Set 5</label>
+                <input type="number" class="fset" id="fset5" name="fset5"/>
+            </div>
             
+            <div class= "form-row row justify-content-md-center players-form" id="player2">
+                <label>Round</label>
+                <input type="text" class= "" id="fround" name="fround"/>
+                <label>Player</label>
+                <input type="text" class= "" id="fplayer" name="fplayer"/>
+                <label>Set 1</label>
+                <input type="number"  class="fset" id="fset1" name="fset1"/>
+                <label>Set 2</label>
+                <input type="number" class="fset" id="fset2" name="fset2"/>
+                <label>Set 3</label>
+                <input type="number" class="fset" id="fset3" name="fset3"/>
+                <label>Set 4</label>
+                <input type="number" class="fset" id="fset4" name="fset4"/>
+                <label>Set 5</label>
+                <input type="number" class="fset" id="fset5" name="fset5"/>
+            </div>
+            <input class="btn btn-dark " id="fsubmit" type="submit" value="Submit">
+
         </form>
-        <table>
-           <tr>
-               <th>Round</th>
-               <th>Player</th>
-               <th>Set 1</th>
-               <th>Set 2</th>
-               <th>Set 3</th>
-               <th>Set 4</th>
-               <th>Set 5</th>
-           </tr>
+        <table class="table container" >
+            <thead>
+                <tr>
+                    <th>Round</th>
+                    <th>Player</th>
+                    <th>Set 1</th>
+                    <th>Set 2</th>
+                    <th>Set 3</th>
+                    <th>Set 4</th>
+                    <th>Set 5</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
         </table>
+
+        <div id="adding"></div>
 
     </main>
 
