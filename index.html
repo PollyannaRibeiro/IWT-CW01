@@ -21,29 +21,29 @@
             <form class=" justify-content-md-center players-form">
                 <div class="row">
                 <label>Tournaments</label>
-                    <input type="checkbox" id="women" name="checkbox" value="women" onclick="onlyOneSelected(this)">
+                    <input type="checkbox" id="women" name="checkbox" value="women">
                     <label>Women</label>
-                    <input type="checkbox" id="men" name="checkbox" value="men" onclick="onlyOneSelected(this)">
+                    <input type="checkbox" id="men" name="checkbox" value="men" >
                     <label>Men</label>
                 </div>
 
                 <label>Round</label>
-                <input type="number" min="1" max="7" class="fset" id="fset1" name="fset1"/>
-                <select>
+                <input type="number" min="1" max="7" class="fround" id="fround" name="round"/>
+                <select id="sel-round">
                     <option value="equals">equals</option>
                     <option value="greater than">greater than</option>
                     <option value="less than">less than</option>
                 </select>
                 <label>Player</label>
-                <input type="text" class= "" id="fplayer" name="fplayer"/>
-                <select>
+                <input type="text" class= "" id="fplayer" name="player"/>
+                <select id="sel-player">
                     <option value="equals">equals</option>
                     <option value="contains">contains</option>
                     <option value="none">none</option>
                 </select>
                 <label>Set</label>
-                <input type="number" min="1" max="5"  class="fset" id="fset1" name="fset1"/>
-                <select>
+                <input type="number" min="1" max="5"  class="fset" id="fset" name="set"/>
+                <select id="sel-set">
                     <option value="equals">equals</option>
                     <option value="greater than">greater than</option>
                     <option value="less than">less than</option>
