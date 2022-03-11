@@ -28,5 +28,27 @@ $.getJSON("wimbledon-men.json", function( data ) {
         });
     });
   });
-
+function searchingRoundOrSet(requested, condition, value){
+    if(requested == null){
+        return true;
+        // It's not searching this information, so it will pass all its content
+    }else{
+        if(condition === "equals"){
+            if(requested === value){
+                return true;
+            }
+        }
+        if(condition === "greater than"){
+            if(requested > value){
+                return true;
+            }
+        }
+        if(condition === "less than"){
+            if(requested < value){
+                return true;
+            }
+        }
+        return false;
+    }
+}
 
