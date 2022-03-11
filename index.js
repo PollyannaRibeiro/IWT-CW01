@@ -24,7 +24,7 @@ function filteringData(array){
     let conditionRound =  $('#sel-round').val();
     let player = array[1].value;
     let conditionPlayer =  $('#sel-player').val();
-    let set = array[0].value;
+    let setRequested = array[0].value;
     let conditionSet =  $('#sel-set').val();
     let tournamentLink = [];
 
@@ -49,6 +49,8 @@ function filteringData(array){
             data["match"].forEach(match => {
                 let item = "";
                 let counter = 0;
+                let setChecked = false;
+                let playerChecked = false;
                 // if round respect the rules:
                 if(searchingRoundOrSet(round, conditionRound, match["round"])){
                     match["player"].forEach( player => {
@@ -61,29 +63,28 @@ function filteringData(array){
                             item += "<td>"+ player["name"] + "</td>";
                         }
                         counter +=1;
-                        // console.log(player["sets-won"])
+                        // console.log(player["sets-won"])             
                         player["set"].forEach(set =>{
+                            if(searchingRoundOrSet(setRequested, conditionSet, set)){
+                                setChecked = true; 
+                            }
+                            console.log("setChecked: " + setChecked);
                             item += "<td>"+ set + "</td>";
                         });
-                        item +="</tr>";
+                        item +="</tr>";                      
+                    });
+                    if(setChecked && counter == 2){
                         if(link == jsonLinks[0]){
                             $('#men-table tbody').append(item);
-                            if (counter == 2){
-                                $('#men-table tbody').append("<br/>");
-                                counter = 0;
-                            }
+                            $('#men-table tbody').append("<br/>");
                         }
-                        else{
+                        else {
                             $('#women-table tbody').append(item);
-                            if (counter == 2){
-                                $('#women-table tbody').append("<br/>");
-                                counter = 0;
-                            }
-
+                            $('#women-table tbody').append("<br/>");
                         }
-                        item = "";
-                    });
-
+                    } 
+                    counter = 0;
+                    item = "";
                 } 
             });
         });
@@ -94,7 +95,6 @@ function searchinName(requested, condition, value){
     if(requested == null){
         return true;
         // It's not searching this information, so it will pass all its content
-
     }else{
         if(condition == "contains"){
             if(value.indexOf(requested) >= 0){
@@ -116,7 +116,7 @@ function searchinName(requested, condition, value){
 }
 
 function searchingRoundOrSet(requested, condition, value){
-    if(requested == null){
+    if(requested === null || requested===""){
         return true;
         // It's not searching this information, so it will pass all its content
     }else{
