@@ -3,6 +3,11 @@ body{
     right: auto;
 }
 
+h1{
+    font-size: 20px!important;
+    margin-left: 5%;
+}
+
 .players-form {
     margin: 10px;
 }
@@ -32,9 +37,6 @@ body{
     font-weight: bold;
 }
 
-/* #men-table{
+#men-title, #men-table, #women-title, #women-table{
     display: none;
 }
-#women-table{
-    display: none;
-} */
