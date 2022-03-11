@@ -28,6 +28,33 @@ $.getJSON("wimbledon-men.json", function( data ) {
         });
     });
   });
+}
+    
+function searchinName(requested, condition, value){
+    if(requested == null){
+        return true;
+        // It's not searching this information, so it will pass all its content
+
+    }else{
+        if(condition == "contains"){
+            if(value.indexOf(requested) >= 0){
+                return true;
+            }
+        }
+        if(condition == "equals"){
+            if(requested === value){
+                return true
+            }
+        }
+        if(condition == "none"){
+            if(requested === value || value.indexOf(requested) >= 0){
+                return true
+            }
+        }
+        return false;
+    }
+}
+
 function searchingRoundOrSet(requested, condition, value){
     if(requested == null){
         return true;
