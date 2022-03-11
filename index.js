@@ -6,12 +6,12 @@ $( document ).ready(function() {
         let newArray = $( this ).serializeArray()
         newArray.reverse();
         console.log(  newArray);
-        separingData(newArray)
+        filteringData(newArray)
         event.preventDefault();
     });
 });
 
-function separingData(array){
+function filteringData(array){
     // console.log(array[0])
     // console.log(array[0].name)
     // console.log(array[0].value)
@@ -126,12 +126,12 @@ function searchingRoundOrSet(requested, condition, value){
             }
         }
         if(condition === "greater than"){
-            if(requested > value){
+            if(requested < value){
                 return true;
             }
         }
         if(condition === "less than"){
-            if(requested < value){
+            if(requested > value){
                 return true;
             }
         }
