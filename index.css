@@ -40,3 +40,7 @@ h1{
 #men-title, #men-table, #women-title, #women-table{
     display: none;
 }
+
+.table td, .table th{
+    border-top: none!important;
+}

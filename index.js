@@ -1,12 +1,22 @@
 $( document ).ready(function() {
     // form colecting info
     $( "form" ).submit(function( event ) {
+        cleaningTables()
         let newArray = $( this ).serializeArray()
         newArray.reverse();
         filteringData(newArray)
         event.preventDefault();
     });
 });
+function cleaningTables(){
+    // removing any previous data on the table
+    $("#men-table").css("display", "none");
+    $("#men-title").css("display", "none");
+    $("#women-table").css("display", "none");
+    $("#women-title").css("display", "none");
+    $('#men-table tbody').empty();
+    $('#women-table tbody').empty();
+}
 
 function filteringData(array){
 
@@ -48,14 +58,13 @@ function filteringData(array){
                         }
                         
                         item += "<tr>"
-                        item += "<th>"+ match["round"] +"</th>"
+                        item += "<td>"+ match["round"] +"</td>"
                         
                         if (player["outcome"] == "won"){
                             item += "<td class='winner'>"+ player["name"] + "</td>";
                         } else{
                             item += "<td>"+ player["name"] + "</td>";
                         }
-                        // console.log(player["sets-won"])             
                         player["set"].forEach(set =>{
                             if(searchingRoundOrSet(setRequested, conditionSet, set)){
                                 setChecked = true; 
@@ -68,14 +77,14 @@ function filteringData(array){
                         if(link == jsonLinks[0]){
                             $('#men-table tbody').append(item);
                             $('#men-table tbody').append("<br/>");
-                            $("#men-table").css("display", "contents");
-                            $("#men-title").css("display", "contents");
+                            $("#men-table").fadeIn("fast");
+                            $("#men-title").fadeIn("fast");
                         }
                         else {
                             $('#women-table tbody').append(item);
                             $('#women-table tbody').append("<br/>");
-                            $("#women-table").css("display", "contents");
-                            $("#women-title").css("display", "contents");
+                            $("#women-table").fadeIn("fast");
+                            $("#women-title").fadeIn("fast");
                         }
                     } 
                     item = "";
