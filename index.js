@@ -41,6 +41,7 @@ function filteringData(array){
         }  
     }
 
+    pendingSearches = tournamentLink.length;
     tournamentLink.forEach(link => {
         $.getJSON(link, function( data ) {
             data["match"].forEach(match => {
@@ -101,10 +102,21 @@ function filteringData(array){
             const error = "<div class='row error-info'><h1>"+ "Sorry, wasn't possible to access "+ tournamentName + " tournament file</h1></div>";
             $('body').append(error);
             console.log("Error in getting JSON link - " + link)
-        });
+        }).always(function() {
+            pendingSearches -= 1;
+            if (pendingSearches == 0) {
+                notFound();
+            }
+        })
     });
 }
     
+function notFound(){
+    const notF = "<div class='row not-found'><h1> No results found</h1></div>" 
+    if($('#men-table tbody').html() === "" && $('#women-table tbody').html() === "" && $(".error-info").length === 0){
+        $('body').append(notF);
+    }
+}
 // Return a boolean informing if the data respect the condition
 function searchingName(requested, condition, value){
     
@@ -162,4 +174,5 @@ function clearingTables(){
     $('#women-table tbody').empty();
 
     $(".error-info").trigger("remove");
+    $(".not-found").trigger("remove");
 }
