@@ -1,12 +1,15 @@
-body{
-    left: auto;
-    right: auto;
-}
+/* basic style */
 
 h1{
     font-size: 20px!important;
     margin-left: 5%;
 }
+
+main{
+    margin-top: 5vh;
+}
+
+/* table  */
 
 .players-form {
     margin: 10px;
@@ -19,28 +22,27 @@ h1{
 }
 #fround{
     width: 70px;
-
 }
 #fplayer{
     width: auto;
-
 }
 .fset{
     width: 50px;
 }
-
-#fsubmit{
-    margin-left: 90%;
+#buttom-row{
+    margin-left: 80%;
 }
-
 .winner{
     font-weight: bold;
 }
 
+/* will be displayed after the user submit the form */
 #men-title, #men-table, #women-title, #women-table{
     display: none;
 }
 
+/* removing a line from pre-format of bootstrap table */
 .table td, .table th{
     border-top: none!important;
 }
+
